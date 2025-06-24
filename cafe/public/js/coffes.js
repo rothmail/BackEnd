@@ -22,7 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
       // Limpa a mensagem após 3 segundos
       setTimeout(() => mensagemSucesso.textContent = "", 3000);
     }
-  
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const mensagemSucesso = document.getElementById("mensagemSucesso");
+      if (mensagemSucesso) {
+        mensagemSucesso.style.display = "none"; // Garante que comece escondida
+      }
+      
+      // ... o resto do seu código
+    });
+
     /**
      * Mostra o resultado da requisição no elemento output.
      * Exibe um JSON formatado (usado nas operações de cadastro, busca, edição).

@@ -12,7 +12,7 @@ export class Coffee {
     @Column({ type: "varchar", length: 255, nullable: false })
     tipo: string;
 
-    @Column({ type: "int", nullable: false })
+    @Column({ type: "decimal", precision: 6, scale: 2 })
     preco: number;
 
     constructor(name: string, tipo: string, preco: number) {

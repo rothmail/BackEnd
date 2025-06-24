@@ -27,7 +27,6 @@ export class CoffeeController {
 
         res.status(201).json({ message: "café criado com sucesso", coffee: newcoffee })
         return
-
     }
 
     // Buscar café por ID
