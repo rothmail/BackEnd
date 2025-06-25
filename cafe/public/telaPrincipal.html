@@ -1,81 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Café</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biblioteca</title>
   <link rel="stylesheet" href="./css/style.css" />
 </head>
+
 <body>
   <div class="container">
-    <h2>Café</h2>
-
+    <h2>Cafeteria</h2>
 
     <section>
-      <h3> Cadastrar Novo Café</h3>
-      <form id="createForm">
-        <label for="name">Nome:</label>
-        <input type="text" name="name" required/>
+      <h3>Cafés</h3>
 
-        <label for="tipo">Tipo:</label>
-        <input type="text" name="tipo" required/>
+      <form id="createForm">
+        <input type="hidden" name="id" id="hiddenId" />
+
+        <label for="name">Nome:</label>
+        <input type="text" name="name" required />
+
+        <label for="intensidade">Intensidade:</label>
+        <input type="text" name="intensidade" required />
 
         <label for="preco">Preço:</label>
-        <input type="number" name="preco" required/>
+        <input type="number" step="0.01" name="preco" required />
 
-        <button type="submit">Cadastrar</button>
-      </form>
-    </section>
-
-
-    <section>
-      <h3> Buscar Café por ID</h3>
-      <form id="buscarForm">
-        <label for="id">ID:</label>
-        <input type="number" name="id" required/>
-        <button type="submit">Buscar</button>
-      </form>
-    </section>
-
-  
-    <section>
-      <h3> Editar Café</h3>
-      <form id="editarForm">
-        <label for="id">ID:</label>
-        <input type="number" name="id" required/>
-
-        <label for="name">Novo Nome:</label>
-        <input type="text" name="name" />
-
-        <label for="tipo">Novo Tipo:</label>
-        <input type="text" name="tipo" />
-
-        <label for="preco">Novo preco:</label>
-        <input type="decimal" name="preco" />
-
-        <button type="submit">Atualizar</button>
+        <button type="submit">Salvar</button>
+        <button type="button" id="cancelarEdicao" style="display: none">
+          Cancelar
+        </button>
       </form>
     </section>
 
     <section>
-      <h3> Deletar Café</h3>
-      <form id="deletarForm">
-        <label for="id">ID:</label>
-        <input type="number" name="id" required/>
-        <button type="submit">Deletar</button>
-      </form>
-    </section>
-    <section>
-      <h3> Listar Cafés</h3>
-      <button onclick="listarCoffees()">Listar</button>
+      <h3>Lista de Cafés</h3>
+      <div class="tabela-wrapper">
+        <table id="tabelaCoffee" class="tabela-coffee">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Intensidade</th>
+              <th>Preço</th>
+              <th>Editar - Deletar</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
       <a class="btn-backlogin" href="cadastrar.html"><button>Sair</button></a>
     </section>
 
-    <div class="mensagem" id="mensagemSucesso"></div>
-    <div id="output" style="margin-top: 20px;"></div>
+    <div id="mensagemSucesso" class="mensagem"></div>
   </div>
-
-  <script src="./js/Coffees.js"></script>
-  <img src="./img/logo-coffee.png" alt="logo do café" class="footer-corner-img">
+  <script src="./js/coffes.js" type="module"></script>
+  <img src="./img/logo-coffee.png" alt="logo do café" class="footer-corner-img" />
 </body>
+
 </html>

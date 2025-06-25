@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column, BeforeInsert, BeforeUpdate, AfterLoad } from 'typeorm';
 
-@Entity('livro')
+@Entity('coffee')
 export class Coffee {
 
     @PrimaryGeneratedColumn()
@@ -10,14 +10,14 @@ export class Coffee {
     name: string;
 
     @Column({ type: "varchar", length: 255, nullable: false })
-    tipo: string;
+    intensidade: string;
 
     @Column({ type: "decimal", precision: 6, scale: 2 })
     preco: number;
 
-    constructor(name: string, tipo: string, preco: number) {
+    constructor(name: string, intensidade: string, preco: number) {
         this.name = name;
-        this.tipo = tipo;
+        this.intensidade = intensidade;
         this.preco = preco;
     }
 }

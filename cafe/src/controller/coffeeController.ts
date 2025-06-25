@@ -5,23 +5,21 @@ import { Coffee } from "../models/Coffee";
 const coffeeRepository = AppDataSource.getRepository(Coffee);
 
 export class CoffeeController {
-    // Listar cafés
     async list(req: Request, res: Response) {
         const Coffee = await coffeeRepository.find();
         res.json(Coffee);
         return
     }
 
-    // Criar café
     async create(req: Request, res: Response) {
-        const { name, tipo, preco } = req.body;
+        const { name, intensidade, preco } = req.body;
 
-        if (!name || !tipo || !preco) {
+        if (!name || !intensidade || !preco) {
             res.status(400).json({ message: "Todos os campos são necessários!" })
             return
         }
 
-        const Coffees = new Coffee(name, tipo, preco)
+        const Coffees = new Coffee(name, intensidade, preco)
         const newcoffee = await coffeeRepository.create(Coffees)
         await coffeeRepository.save(newcoffee)
 
@@ -29,7 +27,6 @@ export class CoffeeController {
         return
     }
 
-    // Buscar café por ID
     async show(req: Request, res: Response) {
         const { id } = req.params;
 
@@ -44,10 +41,9 @@ export class CoffeeController {
         return
     }
 
-    // Atualizar café
     async update(req: Request, res: Response) {
         const { id } = req.params;
-        const { name, tipo, preco } = req.body;
+        const { name, intensidade, preco } = req.body;
 
         const coffee = await coffeeRepository.findOneBy({ id: Number(id) });
 
@@ -57,7 +53,7 @@ export class CoffeeController {
         }
 
         coffee.name = name;
-        coffee.tipo = tipo;
+        coffee.intensidade = intensidade;
         coffee.preco = preco;
 
         await coffeeRepository.save(coffee);
@@ -66,7 +62,6 @@ export class CoffeeController {
         return
     }
 
-    // Deletar coffees
     async delete(req: Request, res: Response) {
         const { id } = req.params;
 

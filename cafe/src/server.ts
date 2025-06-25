@@ -1,7 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import { AppDataSource } from './database/data-source';
-import routesUser from './routes/RoutesUser';
-import livroRoutes from './routes/RoutesCoffee'; // ou o nome do seu arquivo
+import userRoutes from './routes/userRoutes';
+import coffeeRoutes from './routes/coffeeRoutes';
 
 import cors from "cors"
 import path from 'path';
@@ -21,15 +21,14 @@ app.use(cors({
 
 app.use(express.static('public'));
 
-// Routes
 app.get('/', (req: Request, res: Response) => {
     res.sendFile(path.join(__dirname, "../public/entrar.html"));
 });
 
 AppDataSource.initialize()
     .then(() => {
-        app.use('/api', routesUser);
-        app.use(livroRoutes);
+        app.use('/api', userRoutes);
+        app.use(coffeeRoutes);
         app.listen(3000, () => console.log('Server rodando na porta 3000'));
     })
     .catch((error) => console.log(error));
