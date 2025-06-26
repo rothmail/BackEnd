@@ -4,7 +4,7 @@
   "description": "Projeto fullstack simples para cadastro, login de usuários e gerenciamento de cafés com Node.js, Express, TypeORM e MySQL no backend, e HTML/CSS/JS no frontend.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev src/server.ts"
   },
   "keywords": [],
   "author": "",
