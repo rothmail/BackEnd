@@ -106,8 +106,4 @@ Este projeto está licenciado sob os termos da licença MIT. Veja o arquivo `LIC
 
 ---
 
-<<<<<<< HEAD
 Projeto criado para fins de aprendizado e prática de backend com TypeScript e Express.
-=======
-Projeto criado para fins de aprendizado e prática de backend com TypeScript e Express.
->>>>>>> 8dc2d2573e5e188f956d237d62f1e5d46829d4c3
