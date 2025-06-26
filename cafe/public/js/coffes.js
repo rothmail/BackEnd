@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const id = hiddenId.value;
     const name = createForm.querySelector('input[name="name"]').value.trim();
     const intensidade = createForm.querySelector('input[name="intensidade"]').value.trim();
-    const preco = parseInt(createForm.querySelector('input[name="preco"]').value);
+    const preco = createForm.querySelector('input[name="preco"]').value;
 
     if (!name || !intensidade || !preco) {
       exibirMensagem("Preencha todos os campos.", false);
