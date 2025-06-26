@@ -33,7 +33,6 @@ export class UserController {
             res.status(200).json({ message: "login bem sucedido" })
             return;
         }
-
     }
 
     async create(req: Request, res: Response) {
