@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrar</title>
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="formulario">
+            <h2>Entrar</h2>
+
+            <form id="loginForm">
+                <label for="email-login">E-mail</label>
+                <input type="email" id="email-login" name="email" required />
+
+                <label for="senha-login">Senha</label>
+                <input type="password" id="senha-login" name="senha" required />
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <div class="footer-text">
+                Não tem uma conta? <a href="cadastrar.html">Cadastrar</a>
+            </div>
+        </div>
+
+        <div class="mensagem" id="mensagemSucesso">
+            <h2>Login realizado com sucesso!</h2>
+        </div>
+
+        <script src="./js/script.js"></script>
+        <img src="./img/logo-coffee.png" alt="logo do café" class="footer-corner-img">
+</body>
+
+</html>
